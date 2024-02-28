@@ -5,7 +5,7 @@
 <%
 
 
- 	List<GuestbookVo> guestList = (List<GuestbookVo>)request.getAttribute("guestList");
+ 	List<GuestbookVo> gList = (List<GuestbookVo>)request.getAttribute("gList");
 %>
 <!DOCTYPE html>
 <html>
