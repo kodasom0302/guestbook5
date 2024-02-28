@@ -71,7 +71,7 @@ public class GuestbookDao {
 
 	public List<GuestbookVo> guestSelect() {
 
-		List<GuestbookVo> guestList = new ArrayList<GuestbookVo>();
+		List<GuestbookVo> gList = new ArrayList<GuestbookVo>();
 
 		// 0. import java.sql.*;
 		Connection conn = null;
@@ -108,7 +108,7 @@ public class GuestbookDao {
 				GuestbookVo guestVo = new GuestbookVo(no, name, pw, content, date);
 
 				// 리스트에 주소 추가
-				guestList.add(guestVo);
+				gList.add(guestVo);
 			}
 		} catch (ClassNotFoundException e) {
 			System.out.println("error: 드라이버 로딩 실패 - " + e);
@@ -130,7 +130,7 @@ public class GuestbookDao {
 				System.out.println("error:" + e);
 			}
 		}
-		return guestList;
+		return gList;
 	}// select
 
 	public int guestInsert(GuestbookVo guestVo) {

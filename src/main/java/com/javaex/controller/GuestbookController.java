@@ -29,7 +29,7 @@ public class GuestbookController {
 	//삭제
 	@RequestMapping(value="/gbc/delete", method= {RequestMethod.GET, RequestMethod.POST})
 	public String delete(@RequestParam("no") int no, String pw) {
-		System.out.println("PhonebookController.delete()");
+		System.out.println("GuestbookController.delete()");
 		
 		guestbookService.exeDelete(no, pw);
 
