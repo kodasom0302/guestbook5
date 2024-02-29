@@ -15,6 +15,7 @@ import com.javaex.vo.GuestbookVo;
 
 @Controller
 public class GuestbookController {
+	
 	@Autowired
 	private GuestbookService guestbookService;
 	
@@ -28,10 +29,10 @@ public class GuestbookController {
 		
 	//삭제
 	@RequestMapping(value="/gbc/delete", method= {RequestMethod.GET, RequestMethod.POST})
-	public String delete(@RequestParam("no") int no, String pw) {
+	public String delete(@ModelAttribute GuestbookVo guestVo) {
 		System.out.println("GuestbookController.delete()");
 		
-		guestbookService.exeDelete(no, pw);
+		guestbookService.exeDelete(guestVo);
 
 		return "redirect:/gbc/list";
 	}
