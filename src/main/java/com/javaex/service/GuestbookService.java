@@ -2,6 +2,7 @@ package com.javaex.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javaex.dao.GuestbookDao;
@@ -9,6 +10,8 @@ import com.javaex.vo.GuestbookVo;
 
 @Service
 public class GuestbookService {
+	
+	@Autowired
 	private GuestbookDao guestbookDao;
 	
 	//등록
@@ -21,11 +24,10 @@ public class GuestbookService {
 	}
 	
 	//삭제
-	public int exeDelete(int no, String pw) {
+	public int exeDelete(GuestbookVo guestVo) {
 		System.out.println("GuestbookService.exeDelete()");
 		
-		int count=guestbookDao.guestDelete(no, pw);
-		
+		int count=guestbookDao.guestDelete(guestVo);
 		return count;
 	}
 	
